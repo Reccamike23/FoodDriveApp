@@ -191,12 +191,6 @@ To further enhance our model's accuracy, continuous data feeding with the inform
          random_forest.fit(X_train, y_train)
          y_pred_random_forest = random_forest.predict(X_test)
 
-         # Display results using Streamlit
-         st.write("# Random Forest Regression Results")
-         st.write("### Actual vs. Predicted Values")
-         results = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred_random_forest})
-         st.write(results)
-
          # Assuming 'random_forest' is your best trained Random Forest Regressor model
          model = random_forest  # Replace with your actual model
 
@@ -208,7 +202,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
 
          model = joblib.load('random_forest_regressor_model.pkl')
           # Prepare input data for prediction
-         input_data = [[selected_data, selected_data_stake,  routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
+         input_data = [[selected_data, selected_data_stake,  doors_in_route, routes_completed, time_spent,  adult_volunteers,  youth_volunteers]]
 
           # Make prediction
          prediction = model.predict(input_data)
