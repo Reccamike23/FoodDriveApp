@@ -172,35 +172,14 @@ To further enhance our model's accuracy, continuous data feeding with the inform
     # Predict button
       if st.button("Predict"):
 
-        # Calculate Mean Target Value for Each Category
-         mean_target_drop_off = data.groupby('Drop Off Location')['# of Donation Bags Collected/Route'].mean().to_dict()
-         data['Drop Off Location'] = data['Drop Off Location'].map(mean_target_drop_off)
+         with open(‘random_forest_regressor_model.pkl’, ‘wb’) as pickle_out:
+          serialized_classifier = pickle.dumps(random_forest_regressor_model)
+          pickle_out.write(serialized_classifier)
+         
+         with open(‘./data/random_forest_regressor_model.pkl’, ‘rb’) as pickle_in:
+            model = pickle.load(pickle_in)
 
-         mean_target_stake = data.groupby('Stake')['# of Donation Bags Collected/Route'].mean().to_dict()
-         data['Stake'] = df['Stake'].map(mean_target_stake)
-
-         # Create a feature matrix X and target variable y
-         X = data[['Drop Off Location','Stake','# of Adult Volunteers in this route','# of Youth Volunteers in this route','Time to Complete (in minutes) pick up of bags /route', 'Number of routes completed', '# of Doors in Route']]
-         y = data['# of Donation Bags Collected/Route']
-
-         # Split the data into training and testing sets (e.g., 80% train, 20% test)
-         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-         # Implement Random Forest Regression
-         random_forest = RandomForestRegressor(n_estimators=100)  # You can adjust the number of trees (n_estimators)
-         random_forest.fit(X_train, y_train)
-         y_pred_random_forest = random_forest.predict(X_test)
-
-         # Assuming 'random_forest' is your best trained Random Forest Regressor model
-         model = random_forest  # Replace with your actual model
-
-         # Specify the file path where you want to save the model
-         model_filename = 'random_forest_regressor_model.pkl'
-
-         # Save the model to a .pkl file
-         joblib.dump(model, model_filename)
-
-         model = joblib.load('random_forest_regressor_model.pkl')
+         #model = joblib.load('random_forest_regressor_model.pkl')
           # Prepare input data for prediction
          input_data = [[selected_data, selected_data_stake,  doors_in_route, routes_completed, time_spent,  adult_volunteers,  youth_volunteers]]
 
