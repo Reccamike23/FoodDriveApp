@@ -1,6 +1,7 @@
 
 import streamlit as st
 import barcode
+from barcode import Code128
 from barcode.writer import ImageWriter
 from io import BytesIO
 import folium
