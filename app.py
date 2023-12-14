@@ -29,7 +29,7 @@ if tabs == "Journey Overview":
 
   # Page 1: Dashboard
   def dashboard():
-      st.image('/content/Logo.png', use_column_width=True)
+      st.image('Logo.png', use_column_width=True)
 
       st.subheader("💡 Abstract:")
 
