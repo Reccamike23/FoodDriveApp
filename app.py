@@ -178,7 +178,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
           model = joblib.load(file)
 
         # Ensure that the file loaded without any issues
-         print(model)
+          print(model)
          #model = joblib.load('random_forest_regressor_model.pkl')
 
           # Prepare input data for prediction
