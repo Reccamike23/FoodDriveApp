@@ -52,7 +52,7 @@ Moving forward, we are excited about the potential impact of our efforts and are
       what_it_does = '''
         Objective: The Food Drive Innovation Project aims to streamline and modernize the process of organizing and conducting food drives for communities in need. \n
 
-Features:\n
+Our Goal in this Project:\n
 
 Our project aims to enhance and optimize food drives by implementing an efficient and streamlined data collection system. We integrate QR/barcode technology to monitor the number of collected bags seamlessly. This data is then utilized in a web application for predictive analysis, estimating the potential number of bags that can be collected from any stake. Additionally, our application offers a map generation feature, automating the creation of route-specific maps. This comprehensive solution ensures a more effective and data-driven approach to food drive management.\n
 
