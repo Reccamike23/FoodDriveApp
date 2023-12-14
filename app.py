@@ -187,7 +187,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
           # You can add additional information or actions based on the prediction if needed
     # Page 4: Neighbourhood Mapping
     # Read geospatial data
-  geodata = pd.read_csv("/content/Location_data_updated.csv")
+  geodata = pd.read_csv("Location_data_updated.csv")
 
   def neighbourhood_mapping():
       st.title("Neighbourhood Mapping")
