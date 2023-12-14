@@ -1,9 +1,9 @@
 
 import streamlit as st
-import barcode
-from barcode import Code128
-from barcode.writer import ImageWriter
-from io import BytesIO
+#import barcode
+#from barcode import Code128
+#from barcode.writer import ImageWriter
+#from io import BytesIO
 import folium
 from geopy.geocoders import Nominatim
 import pandas as pd
@@ -252,17 +252,17 @@ elif tabs == "Generate Barcode":
     st.write("Enter text to generate a barcode:")
 
     # User input for barcode text
-    barcode_text = st.text_input("Enter Text", "")
+ #   barcode_text = st.text_input("Enter Text", "")
 
-    if st.button("Generate Barcode"):
-      if barcode_text:
-         # Generate the barcode using python-barcode library
-         code128 = barcode.get_barcode_class('code128')
-         barcode_generated = code128(barcode_text, writer=ImageWriter())
-         filename = barcode_generated.save('barcode')
+  #  if st.button("Generate Barcode"):
+ #     if barcode_text:
+  #       # Generate the barcode using python-barcode library
+   #      code128 = barcode.get_barcode_class('code128')
+    #     barcode_generated = code128(barcode_text, writer=ImageWriter())
+     #    filename = barcode_generated.save('barcode')
 
         # Display the generated barcode image
-         st.image(filename)
+      #   st.image(filename)
 
 elif tabs == "Volunteer Registration":
 
