@@ -8,3 +8,4 @@ pandas==1.5.3
 plotly==5.15.0
 Requests==2.31.0
 streamlit==1.29.0
+
