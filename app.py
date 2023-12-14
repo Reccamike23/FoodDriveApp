@@ -175,7 +175,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
          # Load the trained model
         # Load the pickled file to inspect its content
           with open('random_forest_regressor_model.pkl', 'rb') as file:
-          model = joblib.load(file)
+            model = joblib.load(file)
 
         # Ensure that the file loaded without any issues
           print(model)
