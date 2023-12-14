@@ -180,7 +180,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
          data['Stake'] = df['Stake'].map(mean_target_stake)
 
          # Create a feature matrix X and target variable y
-         X = data[['Drop Off Location','Stake','# of Doors in Route','Number of routes completed','Time to Complete (in minutes) pick up of bags /route', '# of Adult Volunteers in this route','# of Youth Volunteers in this route']]
+         X = data[['Drop Off Location','Stake','# of Adult Volunteers in this route','# of Youth Volunteers in this route','Time to Complete (in minutes) pick up of bags /route', 'Number of routes completed', '# of Doors in Route']]
          y = data['# of Donation Bags Collected/Route']
 
          # Split the data into training and testing sets (e.g., 80% train, 20% test)
