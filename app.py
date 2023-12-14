@@ -174,12 +174,12 @@ To further enhance our model's accuracy, continuous data feeding with the inform
 
          # Load the trained model
         # Load the pickled file to inspect its content
-         with open('random_forest_regressor_model.pkl', 'rb') as file:
-            model = joblib.load(file)
+         #with open('random_forest_regressor_model.pkl', 'rb') as file:
+          #  model = joblib.load(file)
 
         # Ensure that the file loaded without any issues
-         print(model)
-         #model = joblib.load('random_forest_regressor_model.pkl')
+         #print(model)
+         model = joblib.load('random_forest_regressor_model.pkl')
 
           # Prepare input data for prediction
          input_data = [[selected_data, selected_data_stake,  routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
