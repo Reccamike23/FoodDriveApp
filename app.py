@@ -169,19 +169,20 @@ To further enhance our model's accuracy, continuous data feeding with the inform
       youth_volunteers = st.slider("Number of Youth Volunteers", 1, 50, 10)
 
 
-    # Predict button
+      # Predict button
       if st.button("Predict"):
 
+         # Load the trained model
          model = joblib.load('random_forest_regressor_model.pkl')
+
           # Prepare input data for prediction
-         input_data = [[selected_data, selected_data_stake,  doors_in_route, routes_completed, time_spent,  adult_volunteers,  youth_volunteers]]
+         input_data = [[selected_data, selected_data_stake,  routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
 
           # Make prediction
          prediction = model.predict(input_data)
 
           # Display the prediction
          st.success(f"Predicted Donation Bags: {prediction[0]}")
-
           # You can add additional information or actions based on the prediction if needed
     # Page 4: Neighbourhood Mapping
     # Read geospatial data
