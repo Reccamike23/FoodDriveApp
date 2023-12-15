@@ -105,7 +105,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
       fig = px.histogram(data_cleaned, x='Time to Complete (min)', nbins=20, labels={'Time to Complete (min)': 'Time to Complete'})
       st.plotly_chart(fig)
 
-  # Page 3: Machine Learning Modeling
+   # Page 3: Machine Learning Modeling
   def machine_learning_modeling():
       st.title("Machine Learning Modeling")
       st.write("Enter the details to predict donation bags:")
@@ -169,7 +169,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
       youth_volunteers = st.slider("Number of Youth Volunteers", 1, 50, 10)
 
 
-      # Predict button
+    # Predict button
       if st.button("Predict"):
 
          # Load the trained model
