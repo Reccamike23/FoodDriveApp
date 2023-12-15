@@ -163,7 +163,6 @@ To further enhance our model's accuracy, continuous data feeding with the inform
       else:
         st.write("No data available for the selected option.")
 
-
       routes_completed = st.slider("Routes Completed", 1, 10, 5)
       time_spent = st.slider("Time Spent (minutes)", 10, 300, 60)
       adult_volunteers = st.slider("Number of Adult Volunteers", 1, 50, 10)
@@ -175,13 +174,13 @@ To further enhance our model's accuracy, continuous data feeding with the inform
       if st.button("Predict"):
 
          # Load the trained model
-         model = joblib.load('random_forest_regressor_model.pkl')
+         rf = joblib.load("random_forest_regressor_model.pkl")
 
           # Prepare input data for prediction
          input_data = [[selected_data, selected_data_stake,  routes_completed, time_spent, adult_volunteers, doors_in_route, youth_volunteers]]
 
           # Make prediction
-         prediction = model.predict(input_data)
+         prediction = rf.predict(input_data)
 
           # Display the prediction
          st.success(f"Predicted Donation Bags: {prediction[0]}")
