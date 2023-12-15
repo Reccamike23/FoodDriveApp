@@ -1,21 +1,21 @@
-
 import streamlit as st
-#import barcode
-#from barcode import Code128
-#from barcode.writer import ImageWriter
-#from io import BytesIO
+import joblib
 import folium
 from geopy.geocoders import Nominatim
 import pandas as pd
 from gradientai import Gradient
 import plotly.express as px
-import joblib
 import sqlite3
 from sqlite3 import Error
 from datetime import datetime
 import geocoder
-import socket
-import requests
+
+#import socket
+#import requests
+#import barcode
+#from barcode import Code128
+#from barcode.writer import ImageWriter
+#from io import BytesIO
 
 
 # Create tabs for Volunteer and Donation
@@ -25,7 +25,9 @@ tabs = st.sidebar.radio("Select a Page", ["Journey Overview",  "Generate Barcode
 if tabs == "Journey Overview":
 
   # Load the dataset with a specified encoding
-  data = pd.read_csv('Cleaned Proposed Data Collection.csv', encoding='latin1')
+  #data = pd.read_csv('Cleaned Proposed Data Collection.csv', encoding='latin1')
+  data = pd.read_csv('clean_data.csv', encoding='latin1')
+
 
   # Page 1: Dashboard
   def dashboard():
