@@ -172,14 +172,7 @@ To further enhance our model's accuracy, continuous data feeding with the inform
     # Predict button
       if st.button("Predict"):
 
-         with open('random_forest_regressor_model.pkl', 'wb') as pickle_out:
-          serialized_classifier = pickle.dumps(random_forest_regressor_model)
-          pickle_out.write(serialized_classifier)
-         
-         with open('./data/random_forest_regressor_model.pkl', 'rb') as pickle_in:
-            model = pickle.load(pickle_in)
-
-         #model = joblib.load('random_forest_regressor_model.pkl')
+         model = joblib.load('random_forest_regressor_model.pkl')
           # Prepare input data for prediction
          input_data = [[selected_data, selected_data_stake,  doors_in_route, routes_completed, time_spent,  adult_volunteers,  youth_volunteers]]
 
